@@ -171,9 +171,9 @@ verify_os() {
     # This is safe as it's a standard system file.
     . /etc/os-release
 
-    if [ "$ID" == "ubuntu" ] && [ "$VERSION_ID" == "24.04" ]; then
+    if [ "$ID" != "ubuntu" ] && [ "$VERSION_ID" != "24.04" ]; then
         # log "System check passed: Ubuntu 24.04 LTS detected."
-    else
+    # else
         # If it fails, print a detailed error message before exiting.
         echo ""
         echo -e "  \e[31m[X] Incompatible Operating System Detected.\e[0m"
