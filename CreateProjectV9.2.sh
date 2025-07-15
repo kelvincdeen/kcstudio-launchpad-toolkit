@@ -1616,7 +1616,7 @@ main() {
 EOF
     echo -e "\e[0m" # Reset color
     
-    log "Advanced Project Architect v7.0.3"
+    log "Advanced Project Architect v9.2"
     echo "This script can create a new project from scratch or restore one from a backup."
     
     # Declare variables used in the final summary so they have global scope

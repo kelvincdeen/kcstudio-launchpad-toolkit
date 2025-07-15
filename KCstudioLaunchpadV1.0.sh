@@ -160,6 +160,32 @@ run_script() {
     "$script_path"
 }
 
+verify_os() {
+    # log "Verifying Operating System..."
+
+    if [ ! -f /etc/os-release ]; then
+        err "Cannot determine OS version: /etc/os-release not found. Aborting."
+    fi
+
+    # Source the os-release file to get variables like ID and VERSION_ID
+    # This is safe as it's a standard system file.
+    . /etc/os-release
+
+    if [ "$ID" == "ubuntu" ] && [ "$VERSION_ID" == "24.04" ]; then
+        # log "System check passed: Ubuntu 24.04 LTS detected."
+    else
+        # If it fails, print a detailed error message before exiting.
+        echo ""
+        echo -e "  \e[31m[X] Incompatible Operating System Detected.\e[0m"
+        echo "  --------------------------------------------------------"
+        echo -e "  \e[33mExpected:\e[0m Ubuntu 24.04 LTS"
+        echo -e "  \e[31mFound:\e[0m    $PRETTY_NAME"
+        echo "  --------------------------------------------------------"
+        # Now use the 'err' function to print the final message and exit.
+        err "This toolkit is designed exclusively for Ubuntu 24.04 to ensure stability."
+    fi
+}
+
 # --- Documentation Pages ---
 show_docs_main() {
     while true; do
@@ -541,7 +567,7 @@ main() {
     while true; do
         show_logo
         printf "%s\n" "==================================================================================="
-        printf "             \e[1;37m%s\e[0m\n" "KCStudio Launchpad Toolkit v2.3"
+        printf "             \e[1;37m%s\e[0m\n" "KCStudio Launchpad V1.0"
         printf "           \e[90m%s\e[0m\n" "The Developer's Launch Platform"
         printf "%s\n" "==================================================================================="
         printf "\n"
@@ -576,7 +602,9 @@ main() {
 
 # --- Run Launch Animation Once ---
 launch_kcstudio
-pause  # Optional: pause to let the user admire the animation
+verify_os
+sleep 0.5
+# pause  # Optional: pause to let the user admire the animation
 
 # --- Execute Main ---
 main

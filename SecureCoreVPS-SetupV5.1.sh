@@ -501,12 +501,12 @@ main() {
     fi
 
     show_logo
-    log "Starting Secure VPS Setup v3.2.9..."
-    verify_os
+    log "Starting Secure VPS Setup v5.1..."
     echo "This script will perform a full, secure setup of this server."
     echo "It focuses on the essentials to create a stable and secure foundation."
     read -p "$(echo -e "\e[36m[?]\e[0m Press [Enter] to begin the setup. ")"
 
+    verify_os
     system_setup
     check_ntp
     setup_certbot
@@ -561,7 +561,7 @@ main() {
     echo "https://github.com/KCstudio/KCstudio-launchpad-toolkit"
     
     echo ""
-    prompt "Press [Enter] to reboot the server now, or Ctrl+C to cancel."
+    prompt "Press [Enter] to finish server hardening."
     
     die "Please reboot the server by typing 'reboot' and log back in as the '$DEPLOY_USER' user to continue."
 }
