@@ -146,14 +146,19 @@ EOF
 
 run_script() {
     local script_name=$1
-    local script_path="./${script_name}"
+    # Bepaal de directory waar het HUIDIGE script (KCstudioLaunchpadV1.0.sh) staat.
+    local toolkit_dir
+    toolkit_dir=$(dirname "$(realpath "$0")")
+    
+    local script_path="${toolkit_dir}/${script_name}"
 
     if [ ! -f "$script_path" ]; then
-        err "Script '$script_name' not found. Please ensure all toolkit scripts are in the same directory."
+        err "Script '$script_name' not found at expected path: '$script_path'. Please ensure all toolkit scripts are in the same directory."
     fi
+    
     if [ ! -x "$script_path" ]; then
         warn "Script '$script_name' is not executable. Attempting to set permissions..."
-        chmod +x "$script_path" || err "Could not set execute permissions on '$script_name'. Please run 'chmod +x $script_name' manually."
+        sudo chmod +x "$script_path" || err "Could not set execute permissions on '$script_path'. Please run 'sudo chmod +x $script_path' manually."
     fi
 
     log "Executing '$script_name'..."

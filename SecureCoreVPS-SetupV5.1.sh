@@ -14,6 +14,7 @@ warn() { echo -e "\n\e[33m[!]\e[0m $1"; }
 die() { echo -e "\n\e[31m[X]\e[0m Error: $1" >&2; exit 1; }
 prompt() { read -rp "$(echo -e "\e[36m[?]\e[0m $1 ")" "$2"; }
 log_ok() { echo -e "  \e[32m✔\e[0m $1"; }
+pause() { echo ""; read -rp "Press [Enter] to continue..."; }
 
 
 # --- Root Enforcement ---
@@ -195,15 +196,15 @@ user_setup() {
     warn "An SSH public key is required for the '$deploy_user' user."
     echo "This key will be used for all future logins. Password login will be disabled."
     echo "If you don't have a key, generate one on your local machine now."
-    echo "The following commands are examples. Replace the filename and comment."
+    echo "You can copy the following commands, depening the OS you are currently using."
     echo ""
     echo -e "  \e[36mOn Linux/macOS:\e[0m"
-    echo -e "    ssh-keygen -t ed25519 -C \"$deploy_user@vps\" -f ~/.ssh/${deploy_user}_vps_key"
-    echo -e "    cat ~/.ssh/${deploy_user}_vps_key.pub"
+    echo "    ssh-keygen -t ed25519 -C \"$deploy_user@vps\" -f ~/.ssh/${deploy_user}_vps_key"
+    echo "    cat ~/.ssh/${deploy_user}_vps_key.pub"
     echo ""
     echo -e "  \e[36mOn Windows (PowerShell):\e[0m"
-    echo -e "    ssh-keygen -t ed25519 -C \"$deploy_user@vps\" -f \$env:USERPROFILE\\.ssh\\${deploy_user}_vps_key"
-    echo -e "    Get-Content \$env:USERPROFILE\\.ssh\\${deploy_user}_vps_key.pub"
+    echo "    ssh-keygen -t ed25519 -C \"$deploy_user@vps\" -f \$env:USERPROFILE\\.ssh\\${deploy_user}_vps_key"
+    echo "    Get-Content \$env:USERPROFILE\\.ssh\\${deploy_user}_vps_key.pub"
     echo ""
     echo ""
     
@@ -543,6 +544,7 @@ main() {
     echo ""
     echo "Use this command from YOUR LOCAL machine to log back in:"
     echo -e "  \e[36mssh -p $SSH_PORT -i /path/to/your/private_key $DEPLOY_USER@SERVER_IP\e[0m"
+    echo -e "  \e[36mOR use launchpad if configured.\e[0m"
     echo "-------------------------------------"
     
     echo ""
@@ -561,9 +563,23 @@ main() {
     echo "https://github.com/KCstudio/KCstudio-launchpad-toolkit"
     
     echo ""
-    prompt "Press [Enter] to finish server hardening."
-    
-    die "Please reboot the server by typing 'reboot' and log back in as the '$DEPLOY_USER' user to continue."
+    echo ""
+    # Gebruik de prompt functie om de gebruiker een duidelijke ja/nee vraag te stellen.
+    prompt "The server setup is complete. It is highly recommended to reboot now. Reboot now? [y/N]:" REBOOT_CONFIRM
+
+    # Controleer de input van de gebruiker.
+    if [[ "$REBOOT_CONFIRM" == [yY] || "$REBOOT_CONFIRM" == [yY][eE][sS] ]]; then
+        log "Rebooting server now...log back in as the '$DEPLOY_USER' user in a few moments to continue."
+        # Geef een paar seconden zodat de gebruiker de boodschap kan lezen.
+        sleep 3
+        # Voer het daadwerkelijke reboot commando uit.
+        reboot
+    else
+        warn "Reboot cancelled by user."
+        echo "Please remember to manually reboot the server soon by typing 'reboot' to apply all changes."
+        echo "You can log back in as '$DEPLOY_USER' now."
+        exit 0
+    fi
 }
 
 # --- Execute Main ---
