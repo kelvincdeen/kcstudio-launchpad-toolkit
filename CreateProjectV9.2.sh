@@ -274,7 +274,7 @@ def send_login_email(email: str, token: str):
         logger.error("Resend API key is not configured. Cannot send email.")
         return
     try:
-        # use this if you want to use your own frontend domain -> verify_url = f"https://{FRONTEND_DOMAIN}/verify-login?token={token}"
+        # use this if you want to use your own frontend domain-> verify_url = f"https://{FRONTEND_DOMAIN}/verify-login?token={token}"
         verify_url = f"https://launchpad.kcstudio.nl/verify-login?token={token}"
 
         # load from external template
@@ -438,8 +438,6 @@ PYTHON
 <html>
   <body style="margin:0; padding:0; background-color:#ffffff; font-family:Verdana; color:#000000; text-align:center;">
     <div style="max-width:600px; margin:0 auto; padding:40px;">
-      <!-- Logo -->
-      <img src="https://api.kcstudio.nl/v1/storage/download/khLrDeaHCnX2KDwtc6_SnA" alt="KCstudio Logo" style="max-width:200px; height:auto; margin:-15px;" />
       
       <h1 style="margin-bottom:10px; font-size:28px; font-weight:bold;">KCstudio Launchpad</h1>
       <h2 style="margin-top:0; font-size:16px; font-weight:normal;">Fullstack Toolkit for Your VPS</h2>
@@ -458,7 +456,7 @@ PYTHON
         This backend magic link login system was created with KCstudio Launchpad Toolkit.<br><br>
         🐙 <a href="https://github.com/kcstudio-launchpad-toolkit" style="color:#888888; text-decoration:none;">GitHub</a>
         &nbsp;|&nbsp;
-        🚀 <a href="https://launchpad.kcstudio.nl" style="color:#888888; text-decoration:none;">KCstudio.nl</a>
+        🚀 <a href="https://launchpad.kcstudio.nl/backend-tester" style="color:#888888; text-decoration:none;">KCstudio.nl</a>
       </div>
     </div>
   </body>
@@ -1310,6 +1308,7 @@ run_create_mode() {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23ffae09"/></svg>'>
     <title>Welcome to KCstudio Launchpad Toolkit</title>
     <style>
       body {
@@ -1364,7 +1363,7 @@ run_create_mode() {
     </style>
   </head>
   <body>
-  <img src="https://api.kcstudio.nl/v1/storage/download/khLrDeaHCnX2KDwtc6_SnA" alt="KCstudio Logo" style="max-width:125px; height:auto; margin-bottom:1vw; padding-top:2vw;" />
+  <img src="https://launchpad.kcstudio.nl/img/KCstudio_Launchpad_Logo.png" alt="KCstudio Logo" style="max-width:125px; height:auto; margin-bottom:1vw; padding-top:2vw;" />
     <h1>KCstudio Launchpad</h1>
     <p>Fullstack Toolkit Creator and Manager</p>
     <p>Welcome to your project: <strong>$PROJECT</strong></p>

@@ -426,7 +426,7 @@ EOF
     log_ok "NGINX configuration reloaded."
 }
 
-final_steps() {
+enable_unattended_security_updates() {
     log "Enabling unattended security updates..."
     {
       echo 'APT::Periodic::Update-Package-Lists "1";';
@@ -434,7 +434,9 @@ final_steps() {
       echo 'APT::Periodic::AutocleanInterval "7";';
     } > /etc/apt/apt.conf.d/20auto-upgrades
     log_ok "Automatic security updates enabled."
-    
+}
+
+lynis_audit() {
     log "Running Lynis security audit (this may take a minute)..."
     local report_file="/root/lynis-report-$(date +%Y%m%d).txt"
     lynis audit system --quiet --no-colors > "$report_file"
@@ -529,7 +531,20 @@ main() {
     ssh_hardening "$DEPLOY_USER" "$SSH_PORT"
     firewall_setup "$SSH_PORT"
     nginx_hardening
-    final_steps
+    enable_unattended_security_updates
+
+    echo ""
+    warn "The next step is to run a full Lynis security audit."
+    echo "This scan verifies the server's hardened state but can take a minute or two."
+    
+    prompt "Run the security audit now? (This is recommended for the first time) [Y/n]:" RUN_LYNIS_CONFIRM
+    if [[ -z "$RUN_LYNIS_CONFIRM" || "$RUN_LYNIS_CONFIRM" == [yY] || "$RUN_LYNIS_CONFIRM" == [yY][eE][sS] ]]; then
+        lynis_audit
+    else
+        log "Skipping Lynis audit."
+        echo "You can always run a new audit later from the 'ServerMaintenance' toolkit."
+    fi
+
     ask_for_launchpad_alias
     
 
@@ -544,15 +559,23 @@ main() {
     echo ""
     echo "Use this command from YOUR LOCAL machine to log back in:"
     echo -e "  \e[36mssh -p $SSH_PORT -i /path/to/your/private_key $DEPLOY_USER@SERVER_IP\e[0m"
-    echo -e "  \e[36mOR use launchpad if configured.\e[0m"
     echo "-------------------------------------"
     
     echo ""
     log "Next Steps After Reboot:"
     echo "1. Log back into the server using the new details above."
-    echo "2. Start the main toolkit menu with this command:"
-    echo -e "   \e[36msudo /opt/kcstudio-launchpad-toolkit/KCstudioLaunchpad.sh\e[0m"
-    echo ""
+    echo "2. Start the main toolkit menu with one of the following commands:"
+    
+    if [[ "$CREATE_ALIAS" == [yY] || "$CREATE_ALIAS" == [yY][eE][sS] ]]; then
+        echo -e "   Since you created the alias, you can simply type:"
+        echo -e "   \e[36mlaunchpad\e[0m"
+    else
+        echo -e "   Use the full path to run the toolkit:"
+        echo -e "   \e[36msudo /opt/kcstudio-launchpad-toolkit/KCstudioLaunchpadV1.0.sh\e[0m"
+        echo ""
+        echo -e "\e[33m💡 Pro Tip:\e[0m You can set up the 'launchpad' shortcut later by checking the FAQ section on the website."
+    fi
+
     echo "From the main menu, you can:"
     echo "  - Architect new applications ('CreateProject')."
     echo "  - Manage existing projects ('ManageApp')."
@@ -560,19 +583,15 @@ main() {
     
     echo ""
     echo "For more information and documentation, visit:"
-    echo "https://github.com/KCstudio/KCstudio-launchpad-toolkit"
+    echo "https://github.com/kelvincdeen/KCstudio-launchpad-toolkit"
     
     echo ""
     echo ""
-    # Gebruik de prompt functie om de gebruiker een duidelijke ja/nee vraag te stellen.
-    prompt "The server setup is complete. It is highly recommended to reboot now. Reboot now? [y/N]:" REBOOT_CONFIRM
 
-    # Controleer de input van de gebruiker.
+    prompt "The server setup is complete. It is highly recommended to reboot now. Reboot now? [y/N]:" REBOOT_CONFIRM
     if [[ "$REBOOT_CONFIRM" == [yY] || "$REBOOT_CONFIRM" == [yY][eE][sS] ]]; then
-        log "Rebooting server now...log back in as the '$DEPLOY_USER' user in a few moments to continue."
-        # Geef een paar seconden zodat de gebruiker de boodschap kan lezen.
+        log "Rebooting server now...log back in as the '$DEPLOY_USER' user after the reboot."
         sleep 3
-        # Voer het daadwerkelijke reboot commando uit.
         reboot
     else
         warn "Reboot cancelled by user."
