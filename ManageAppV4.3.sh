@@ -54,18 +54,19 @@ BACKUP_ROOT="/var/backups"
 # --- Startup Logic ---
 list_all_domains() {
     log "Listing all managed projects and their domains..."
-    echo "----------------------------------------------------------------------"
-    printf "%-20s | %-25s | %-25s\n" "PROJECT NAME" "FRONTEND DOMAIN" "API DOMAIN"
-    echo "----------------------------------------------------------------------"
+    echo "----------------------------------------------------------------------------------------------------"
+    printf "%-30s | %-35s | %-35s\n" "PROJECT NAME" "FRONTEND DOMAIN" "API DOMAIN"
+    echo "----------------------------------------------------------------------------------------------------"
 
     sudo find "$PROJECT_ROOT" -maxdepth 2 -type f -name "project.conf" | while read -r conf_file; do
         (
             # shellcheck source=/dev/null
             source <(sudo cat "$conf_file")
-            printf "%-20s | %-25s | %-25s\n" "$PROJECT" "${FRONTEND_DOMAIN:-N/A}" "${API_DOMAIN:-N/A}"
+            printf "%-30s | %-35s | %-35s\n" "$PROJECT" "${FRONTEND_DOMAIN:-N/A}" "${API_DOMAIN:-N/A}"
         )
     done
-    echo "----------------------------------------------------------------------"
+    echo "----------------------------------------------------------------------------------------------------"
+    pause
 }
 
 if [[ "${1-}" == "--list-all" ]]; then
@@ -533,7 +534,7 @@ explore_database() {
     printf "\n\e[36m%s\e[0m\n" "ESSENTIAL COMMANDS (start with a dot '.'):"
     printf "  - \e[32m.tables\e[0m          List all tables in the database.\n"
     printf "  - \e[32m.schema <table_name>\e[0m Show the structure of a specific table.\n"
-    printf "  - \e[32m.quit or \\q\e[0m      \e[31mExit the client and return to this script.\e[0m\n"
+    printf "  - \e[32mquit or \\q\e[0m      \e[31mExit the client and return to this script.\e[0m\n"
     printf "\n\e[36m%s\e[0m\n" "EXAMPLE SQL QUERIES (end with a semicolon ';'):"
     printf "  - \e[32mSELECT * FROM users LIMIT 10;\e[0m\n"
     printf "  - \e[32mSELECT count(*) FROM items;\e[0m\n"

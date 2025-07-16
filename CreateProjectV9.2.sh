@@ -179,6 +179,11 @@ def safe_write(db, query: str, params=(), retries=3):
                 time.sleep(random.uniform(0.2, 0.5))
             else:
                 raise
+
+# --- Real Client IP, works with and without Cloudflare ---
+def get_client_ip(request: Request) -> str:
+    return request.headers.get("cf-connecting-ip") or request.headers.get("x-real-ip") or request.client.host
+
 PYTHON
 }
 
@@ -475,7 +480,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-from helpers import get_current_user, get_admin_access, setup_logger, limiter, AuthInfo
+from helpers import get_current_user, get_admin_access, setup_logger, limiter, AuthInfo, get_client_ip
 
 load_dotenv()
 app = FastAPI(root_path="/v1/app")
@@ -498,7 +503,7 @@ def health(): return {"status": "app is healthy"}
 @app.get("/public-info")
 @limiter.limit("20/minute")
 def get_public_info(request: Request):
-    logger.info(f"Public info requested by {request.client.host}")
+    logger.info(f"Public info requested by {get_client_ip(request)}")
     return {"message": "This is a public endpoint, anyone can see this."}
 
 @app.get("/user/secret-data")
@@ -510,7 +515,7 @@ async def read_user_secret_data(request: Request, current_user: AuthInfo = Depen
 @app.get("/admin/system-status")
 @limiter.limit("5/minute")
 async def read_admin_dashboard(request: Request, _=Depends(get_admin_access)):
-    logger.warning(f"Admin system status accessed by {request.client.host}")
+    logger.warning(f"Admin system status accessed by {get_client_ip(request)}")
     return {"message": "Welcome, Admin! System status: All systems nominal."}
 PYTHON
 }

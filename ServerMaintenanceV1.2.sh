@@ -344,7 +344,7 @@ util_litecli() {
     printf "\n\e[36m%s\e[0m\n" "ESSENTIAL COMMANDS (start with a dot '.'):"
     printf "  - \e[32m.tables\e[0m          List all tables in the database.\n"
     printf "  - \e[32m.schema <table_name>\e[0m Show the structure of a specific table.\n"
-    printf "  - \e[32m.quit or \\q\e[0m      \e[31mExit the client and return to this script.\e[0m\n"
+    printf "  - \e[32mquit or \\q\e[0m      \e[31mExit the client and return to this script.\e[0m\n"
     printf "\n\e[36m%s\e[0m\n" "EXAMPLE SQL QUERIES (end with a semicolon ';'):"
     printf "  - \e[32mSELECT * FROM users LIMIT 10;\e[0m\n"
     printf "  - \e[32mSELECT count(*) FROM items;\e[0m\n"
