@@ -3,7 +3,7 @@
 </a>
 
 # KCStudio Launchpad
-> ### your own little private PaaS.
+> ### The fastest way to ship your whole portfolio.
 
 A personal server butler that turns a blank VPS into a live, full-stack application in minutes. For all your projects.
 
@@ -40,7 +40,7 @@ This isn't just a concept; it's a real, working system. The entire demo platform
 ## [launchpad.kcstudio.nl](https://launchpad.kcstudio.nl/)
 
 *   🌐 **Live Demo:** [launchpad.kcstudio.nl/backend-tester](https://launchpad.kcstudio.nl/backend-tester)
-*   📚 **Live API Docs:** [launchpad.cstudio.nl/api-docs](https://launchpad.kcstudio.nl/api-docs)
+*   📚 **Live API Docs:** [launchpad.kcstudio.nl/api-docs](https://launchpad.kcstudio.nl/api-docs)
 *   🎥 **Full Video Walkthrough:** [Watch the 5-minute setup](https://launchpad.kcstudio.nl/the-why)
 
 ---
@@ -210,11 +210,14 @@ The butler will take over and guide you the rest of the way. After this initial 
   *   **How many projects can I run with this?**
       *   As many as your VPS can handle. Each project is fully isolated with its own system user, services, domain, and SSL certificate.
   *   **What are the requirements?**
-      *   A fresh Ubuntu 24.04 VPS from any provider (Hetzner, DigitalOcean, Linode etc.) and a public SSH key on your local machine. That's it.
+      *   A fresh Ubuntu 24.04 VPS from any provider (Hetzner, DigitalOcean, Linode etc.) and a public SSH key on your local machine. That's it. (and a domain pointed to your server ofcourse)
   *   **Why not Docker?**
       *   It's a deliberate choice. For a solo developer, Docker can be a heavy, abstract layer you don't always need. This toolkit uses the tools your server already understands. This is about owning your stack, top to bottom.
   *   **What API framework does it use? And what's up with the endpoint names?**
       *   All the backend APIs are built with **FastAPI**. It's super fast and easy to work with. I prioritized what felt most straightforward for someone (like me!) who just wants to get things working without getting tangled in textbook definitions. You get clear, working APIs right out of the box.
+  *   **What This Is, and What It Isn't**
+      *   This is a hammer. A really, really good hammer for the specific nail of deploying multiple isolated full-stack apps on a single VPS. It's designed to turn that single server into a powerful host for your entire portfolio. It's for the freelancer, the indie hacker, the hobbyist. It is NOT an enterprise-grade, multi-server, auto-scaling cluster manager. It's a tool for you who value simplicity, speed, and total control over their entire stack of applications.
+
 
 ---
 
