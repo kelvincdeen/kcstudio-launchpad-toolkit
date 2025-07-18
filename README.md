@@ -3,7 +3,7 @@
 </a>
 
 # KCStudio Launchpad
-> ### your own little private PaaS.
+> ### The fastest way to ship your whole portfolio.
 
 A personal server butler that turns a blank VPS into a live, full-stack application in minutes. For all your projects.
 
@@ -27,7 +27,7 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 
 ---
 
-> **TL;DR:** KCStudio Launchpad is a command-line PaaS for your VPS. It's a non-containerized, opinionated deployment and management system for solo developers who want to turn a single server into a secure, multi-project portfolio hub.
+> **TL;DR:** KCStudio Launchpad is a command-line TUI for your VPS. It's a non-containerized, opinionated deployment and management system for solo developers who want to turn a single server into a secure, multi-project portfolio hub.
 
 ---
 
