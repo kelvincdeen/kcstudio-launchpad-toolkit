@@ -595,7 +595,7 @@ main() {
 
         case $main_choice in
             1) run_script "SecureCoreVPS-SetupV5.1.sh" ; pause ;;
-            2) run_script "CreateProjectV9.2.sh" ; pause ;;
+            2) run_script "CreateProjectV9.3.sh" ; pause ;;
             3) run_script "ManageAppV4.3.sh" ; pause ;;
             4) run_script "ServerMaintenanceV1.2.sh" ; pause ;;
             [Dd]) show_docs_main ;;

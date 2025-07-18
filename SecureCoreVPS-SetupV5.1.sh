@@ -415,7 +415,7 @@ EOF
     rm -f /etc/nginx/sites-enabled/default
     log_ok "Configured 'black hole' default server."
 
-    sudo rm -r /var/www/html
+    [ -d /var/www/html ] && sudo rm -r /var/www/html
     log_ok "Removed default NGINX files."
     
     if ! nginx -t; then
