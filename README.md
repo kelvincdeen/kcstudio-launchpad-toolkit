@@ -133,7 +133,7 @@ This isn't about features; it's about flow. It's about speed.
 
 The Launchpad is a guided journey. It's not just a collection of scripts; it's a logical, four-step path from a blank server to a portfolio of managed applications.
 
-#### 1. ✅ Secure the Foundation (`SecureCoreVPS-Setup`)
+#### `1.` ✅ Secure the Foundation (`SecureCoreVPS-Setup`)
 *Run this once on a fresh server to put it into a hardenend state.*
 
 *    **Secure SSH:** Forces key-only login, **disables password & root auth entirely**, moves SSH to a custom port, and enforces modern encryption ciphers.
@@ -146,7 +146,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
   <img src="https://kcstudio.nl/github/setup.png" alt="KCStudio Launchpad Create Project" >
 </a>
 
-#### 2. ✅ Architect the Apps (`CreateProject`)
+#### `2.` ✅ Architect the Apps (`CreateProject`)
 *This is the architect. It doesn't just configure your server; it **writes a huge amount of high-quality, secure backend code for you.** Pick components, type in your domains, and it builds the rest, with proper rollback cleanup if anything goes wrong.*
 
 *    **Modular Backend Architect:** Choose your components: 
@@ -161,7 +161,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
   <img src="https://kcstudio.nl/github/create.png" alt="KCStudio Launchpad Create Project" >
 </a>
 
-#### 3. ✅ Manage your Projects (`ManageApp`)
+#### `3.` ✅ Manage your Projects (`ManageApp`)
 *Your day-to-day command center for a specific project. Select a project, and get to work.*
 
 *    **Headache-Free Deployments:** Update your apps from a local path or directly from a URL (like a GitHub .zip), with safe previews before you commit.
@@ -174,7 +174,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
   <img src="https://kcstudio.nl/github/manage.png" alt="KCStudio Launchpad Create Project" >
 </a>
 
-#### 4. ✅ Operate the Server (`ServerMaintenance`)
+#### `4.` ✅ Operate the Server (`ServerMaintenance`)
 *A "Swiss Army Knife" to monitor server health, analyze performance, and use powerful utilities.*
 
 *    **Interactive Real-Time Dashboards:** Launch `htop` to see what's eating your CPU/RAM or `ncdu` to find out what's taking up disk space.
