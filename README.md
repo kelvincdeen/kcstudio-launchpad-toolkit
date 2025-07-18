@@ -29,6 +29,62 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 
 > **TL;DR:** KCStudio Launchpad is a command-line PaaS for your VPS. It's a non-containerized, opinionated deployment and management system for solo developers who want to turn a single server into a secure, multi-project portfolio hub.
 
+---
+
+### What a created project looks like (check out the files in this repo: [showcase-project](https://kelvincdeen.github.io/kcstudio-launchpad-toolkit-showcase) :
+
+```
+[+] Displaying directory tree for 'showcase-launchpad' (max depth: 3, ignoring venv):
+/var/www/showcase-launchpad
+├── app
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── helpers.py
+│   ├── main.py
+│   └── requirements.txt
+├── auth
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── email_template.html
+│   ├── helpers.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── users.db
+├── database
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── data.db
+│   ├── helpers.py
+│   ├── main.py
+│   └── requirements.txt
+├── logs
+│   ├── app
+│   │   └── output.log
+│   ├── auth
+│   │   └── output.log
+│   ├── database
+│   │   └── output.log
+│   └── storage
+│       └── output.log
+├── project.conf
+├── storage
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── files
+│   ├── helpers.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── storage.db
+└── website
+    └── index.html
+```
+
+---
+
 ### See It In Action
 
 This isn't just a concept; it's a real, working system. The entire demo platform was deployed and is managed by the Launchpad toolkit itself.
