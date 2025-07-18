@@ -31,7 +31,7 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 
 ---
 
-### What a created project looks like (check out the files in this repo: [showcase-project](https://kelvincdeen.github.io/kcstudio-launchpad-toolkit-showcase) :
+### What a created project looks like (check out the files in this repo: [showcase-project](https://kelvincdeen.github.io/kcstudio-launchpad-toolkit-showcase) ):
 
 ```
 [+] Displaying directory tree for 'showcase-launchpad' (max depth: 3, ignoring venv):
