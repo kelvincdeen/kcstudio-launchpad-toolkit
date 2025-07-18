@@ -43,7 +43,7 @@ This isn't just a concept; it's a real, working system. The entire demo platform
 
 ---
 
-### What a created project looks like (check out the files in this repo: [showcase-project](https://kelvincdeen.github.io/kcstudio-launchpad-toolkit-showcase) ):
+### What a created project looks like (check out the files in this repo: [showcase-project](https://github.com/kelvincdeen/kcstudio-launchpad-toolkit-showcase) ):
 
 ```
 [+] Displaying directory tree for 'showcase-launchpad' (max depth: 3, ignoring venv):
