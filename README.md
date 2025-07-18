@@ -31,6 +31,18 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 
 ---
 
+### See It In Action
+
+This isn't just a concept; it's a real, working system. The entire demo platform was deployed and is managed by the Launchpad toolkit itself.
+
+## [launchpad.kcstudio.nl](https://launchpad.kcstudio.nl/)
+
+*   🌐 **Live Demo:** [launchpad.kcstudio.nl/backend-tester](https://launchpad.kcstudio.nl/backend-tester)
+*   📚 **Live API Docs:** [launchpad.cstudio.nl/api-docs](https://launchpad.kcstudio.nl/api-docs)
+*   🎥 **Full Video Walkthrough:** [Watch the 5-minute setup](https://launchpad.kcstudio.nl/the-why)
+
+---
+
 ### What a created project looks like (check out the files in this repo: [showcase-project](https://kelvincdeen.github.io/kcstudio-launchpad-toolkit-showcase) ):
 
 ```
@@ -82,18 +94,6 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 └── website
     └── index.html
 ```
-
----
-
-### See It In Action
-
-This isn't just a concept; it's a real, working system. The entire demo platform was deployed and is managed by the Launchpad toolkit itself.
-
-## [launchpad.kcstudio.nl](https://launchpad.kcstudio.nl/)
-
-*   🌐 **Live Demo:** [launchpad.kcstudio.nl/backend-tester](https://launchpad.kcstudio.nl/backend-tester)
-*   📚 **Live API Docs:** [launchpad.cstudio.nl/api-docs](https://launchpad.kcstudio.nl/api-docs)
-*   🎥 **Full Video Walkthrough:** [Watch the 5-minute setup](https://launchpad.kcstudio.nl/the-why)
 
 ---
 
