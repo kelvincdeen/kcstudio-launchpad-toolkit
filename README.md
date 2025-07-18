@@ -29,7 +29,7 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 
 ---
 
-> **TL;DR:** KCStudio Launchpad is a command-line PaaS for your VPS. It's a non-containerized, opinionated deployment and management system for solo developers who want to turn a single server into a secure, multi-project portfolio hub.
+> **TL;DR:** KCStudio Launchpad is your personal server butler. It's a command-line toolkit that automates the deployment and management of full-stack applications for solo developers, turning a single server into a secure, multi-project portfolio hub.
 
 ---
 
