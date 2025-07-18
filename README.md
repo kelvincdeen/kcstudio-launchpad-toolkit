@@ -3,7 +3,7 @@
 </a>
 
 # KCStudio Launchpad
-> ### The fastest way to ship your whole portfolio.
+> ### your own little private PaaS.
 
 A personal server butler that turns a blank VPS into a live, full-stack application in minutes. For all your projects.
 
@@ -23,11 +23,13 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
   </a>
 </p>
 
-![KCStudio Launchpad Main Menu Startup Animation](./main_menu_startup.gif)
+<a href="https://launchpad.kcstudio.nl">
+  <img src="https://kcstudio.nl/github/main_menu_startup.gif" alt="KCStudio Launchpad Main Menu Startup Animation">
+</a>
 
 ---
 
-> **TL;DR:** KCStudio Launchpad is a command-line TUI for your VPS. It's a non-containerized, opinionated deployment and management system for solo developers who want to turn a single server into a secure, multi-project portfolio hub.
+> **TL;DR:** KCStudio Launchpad is a command-line PaaS for your VPS. It's a non-containerized, opinionated deployment and management system for solo developers who want to turn a single server into a secure, multi-project portfolio hub.
 
 ---
 
@@ -43,7 +45,7 @@ This isn't just a concept; it's a real, working system. The entire demo platform
 
 ---
 
-### What a created project looks like (check out the files in this repo: [showcase-project](https://github.com/kelvincdeen/kcstudio-launchpad-toolkit-showcase) ):
+### What a created project looks like (check out the files in this repo: [showcase-project](https://kelvincdeen.github.io/kcstudio-launchpad-toolkit-showcase) ):
 
 ```
 [+] Displaying directory tree for 'showcase-launchpad' (max depth: 3, ignoring venv):
@@ -127,7 +129,7 @@ This isn't about features; it's about flow. It's about speed.
 
 ---
 
-### 🚀 The Complete, Production-Grade Toolbox
+### 🚀 The Complete, Production-Ready Toolbox
 
 The Launchpad is a guided journey. It's not just a collection of scripts; it's a logical, four-step path from a blank server to a portfolio of managed applications.
 
@@ -140,6 +142,10 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Always-On Security:** Enables `unattended-upgrades` to automatically install critical OS security patches.
 *    **Full Security Audit:** Finishes with a `lynis` scan to prove the server's hardened state.
 
+<a href="https://launchpad.kcstudio.nl">
+  <img src="https://kcstudio.nl/github/setup.png" alt="KCStudio Launchpad Create Project" width="50px">
+</a>
+
 #### 2. ✅ Architect the Apps (`CreateProject`)
 *This is the architect. It doesn't just configure your server; it **writes a huge amount of high-quality, secure backend code for you.** Pick components, type in your domains, and it builds the rest, with proper rollback cleanup if anything goes wrong.*
 
@@ -151,6 +157,10 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Built-in API Protection:** All generated APIs come with sensible rate limiting and CORS middleware configured out of the box.
 *    **Rock-Solid Infrastructure:** Automatically builds everything on a secure foundation, with isolated system users, `systemd` services for auto-restarts, and full NGINX proxying with SSL for your custom domains.
 
+<a href="https://launchpad.kcstudio.nl">
+  <img src="https://kcstudio.nl/github/create.png" alt="KCStudio Launchpad Create Project" width="50px">
+</a>
+
 #### 3. ✅ Manage your Projects (`ManageApp`)
 *Your day-to-day command center for a specific project. Select a project, and get to work.*
 
@@ -160,6 +170,10 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Find & Edit Any Backend File:** Use a fuzzy-finder (`fzf`) to instantly open and edit any file in your projects, right from the menu. Perfect for quick fixes.
 *    **The "Big Red Button":** A secure `DELETE` function that completely and cleanly removes every trace of a project from the server.
 
+<a href="https://launchpad.kcstudio.nl">
+  <img src="https://kcstudio.nl/github/manage.png" alt="KCStudio Launchpad Create Project" width="50px">
+</a>
+
 #### 4. ✅ Operate the Server (`ServerMaintenance`)
 *A "Swiss Army Knife" to monitor server health, analyze performance, and use powerful utilities.*
 
@@ -167,6 +181,10 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Visual File & Service Management:** Browse the entire filesystem with a GUI-like file browser (`mc`) or manage any `systemd` service with a searchable, interactive menu.
 *    **One-Command Security & Traffic Audits:** Generate a beautiful HTML traffic report (`GoAccess`), check firewall and SSH logs directly, or re-run a full `lynis` security audit.
 *    **Powerful Server-Wide Utilities:** Explore any SQLite database on the server, add cron jobs with a step-by-step wizard, manage SSL certificates, or configure a SWAP file.
+
+<a href="https://launchpad.kcstudio.nl">
+  <img src="https://kcstudio.nl/github/maintenance.png" alt="KCStudio Launchpad Create Project" width="50px">
+</a>
 
 ---
 
