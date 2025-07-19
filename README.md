@@ -233,7 +233,7 @@ If this toolkit saves you a weekend of headaches, here's how you can say thanks:
 
 *   ⭐ **Star the repo** on GitHub - it's the best way to help others discover it.
 *   💬 **Share it with a friend** or a community who would find it useful.
-*   ☕ **[Buy me a coffee](https://buymeacoffee.com/kcstudio)** to fuel future development.
+*   ☕ **[Buy me a coffee](https://buymeacoffee.com/kelvincdeen)** to fuel future development.
 
 ---
 
@@ -245,4 +245,4 @@ This toolkit is a demonstration of the holistic, product-focused approach I appl
 
 ### 🗺️ Future Roadmap
 
-I have a few things in mind on how I could improve the toolkit, but for now...it just works so I am happy!
+I definitly got ideas on what to improve and new features to implement. But for now...it just works...so I am happy!
