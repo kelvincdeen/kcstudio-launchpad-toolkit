@@ -462,9 +462,9 @@ PYTHON
       </p>
       <div style="margin-top:40px; font-size:12px; color:#888888;">
         This backend magic link login system was created with KCstudio Launchpad Toolkit.<br><br>
-        🐙 <a href="https://github.com/kcstudio-launchpad-toolkit" style="color:#888888; text-decoration:none;">GitHub</a>
+        🐙 <a href="https://github.com/kelvincdeen/kcstudio-launchpad-toolkit" style="color:#888888; text-decoration:none;">GitHub</a>
         &nbsp;|&nbsp;
-        🚀 <a href="https://launchpad.kcstudio.nl/backend-tester" style="color:#888888; text-decoration:none;">KCstudio.nl</a>
+        🚀 <a href="https://launchpad.kcstudio.nl" style="color:#888888; text-decoration:none;">KCstudio Launchpad</a>
       </div>
     </div>
   </body>
@@ -1372,11 +1372,11 @@ run_create_mode() {
     </style>
   </head>
   <body>
-  <img src="https://launchpad.kcstudio.nl/img/KCstudio_Launchpad_Logo.png" alt="KCstudio Logo" style="max-width:125px; height:auto; margin-bottom:1vw; padding-top:2vw;" />
+  <img src="https://launchpad.kcstudio.nl/img/KCstudio_Launchpad_Logo.webp" alt="KCstudio Logo" style="max-width:125px; height:auto; margin-bottom:1vw; padding-top:2vw;" />
     <h1>KCstudio Launchpad</h1>
     <p>Fullstack Toolkit Creator and Manager</p>
     <p>Welcome to your project: <strong>$PROJECT</strong></p>
-    <a class="badge" href="https://launchpad.kcstudio.nl">Test your backend here!</a>
+    <a class="badge" href="https://launchpad.kcstudio.nl/backend-tester">Test your backend here!</a>
     <div class="social">
       <br>
       <a href="https://github.com/kelvincdeen/kcstudio-launchpad-toolkit" target="_blank">

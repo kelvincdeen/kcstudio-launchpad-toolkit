@@ -405,7 +405,7 @@ _display_styled_api_reference() {
     printf "\n"
     printf "  \e[1;36m%s\e[0m\n" "🚀 KCStudio Launchpad API Reference"
     printf "  %s\n" "A comprehensive reference for all auto-generated API endpoints."
-    printf "  %s\n" "Check fullstack.kcstudio.nl/api-docs for full documentation."
+    printf "  %s\n" "Check launchpad.kcstudio.nl/api-docs for full documentation."
     printf "\n"
     printf "  \e[1;33m%s\e[0m\n" "General Notes"
     printf "  \e[90m%s\e[0m\n" "----------------------------------------------------------------"
