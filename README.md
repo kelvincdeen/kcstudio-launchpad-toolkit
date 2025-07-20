@@ -24,7 +24,7 @@ No Docker. No Kubernetes. Just your server, your code, and one menu to run it al
 </p>
 
 <a href="https://launchpad.kcstudio.nl">
-  <img src="https://kcstudio.nl/github/main_menu_startup.gif" alt="KCStudio Launchpad Main Menu Startup Animation">
+  <img src="https://launchpad.kcstudio.nl/github/main_menu_startup.gif" alt="KCStudio Launchpad Main Menu Startup Animation">
 </a>
 
 ---
@@ -144,7 +144,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Full Security Audit:** Finishes with a `lynis` scan to prove the server's hardened state.
 
 <a href="https://launchpad.kcstudio.nl">
-  <img src="https://launchpad.kcstudio.nl/github/setup.png" alt="KCStudio Launchpad Create Project" >
+  <img src="https://launchpad.kcstudio.nl/github/setup.png" alt="KCStudio Launchpad - Setup Core Server" >
 </a>
 
 #### `2.` ✅ Architect the Apps (`CreateProject`)
@@ -159,7 +159,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Rock-Solid Infrastructure:** Automatically builds everything on a secure foundation, with isolated system users, `systemd` services for auto-restarts, and full NGINX proxying with SSL for your custom domains.
 
 <a href="https://launchpad.kcstudio.nl">
-  <img src="https://launchpad.kcstudio.nl/github/create.png" alt="KCStudio Launchpad Create Project" >
+  <img src="https://launchpad.kcstudio.nl/github/create.png" alt="KCStudio Launchpad - Create Projects" >
 </a>
 
 #### `3.` ✅ Manage your Projects (`ManageApp`)
@@ -172,7 +172,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **The "Big Red Button":** A secure `DELETE` function that completely and cleanly removes every trace of a project from the server.
 
 <a href="https://launchpad.kcstudio.nl">
-  <img src="https://launchpad.kcstudio.nl/github/manage.png" alt="KCStudio Launchpad Create Project" >
+  <img src="https://launchpad.kcstudio.nl/github/manage.png" alt="KCStudio Launchpad - Manage Projects" >
 </a>
 
 #### `4.` ✅ Operate the Server (`ServerMaintenance`)
@@ -184,7 +184,7 @@ The Launchpad is a guided journey. It's not just a collection of scripts; it's a
 *    **Powerful Server-Wide Utilities:** Explore any SQLite database on the server, add cron jobs with a step-by-step wizard, manage SSL certificates, or configure a SWAP file.
 
 <a href="https://launchpad.kcstudio.nl">
-  <img src="https://launchpad.kcstudio.nl/github/maintenance.png" alt="KCStudio Launchpad Create Project" >
+  <img src="https://launchpad.kcstudio.nl/github/maintenance.png" alt="KCStudio Launchpad - Maintain Server" >
 </a>
 
 ---
