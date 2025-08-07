@@ -224,7 +224,7 @@ The butler will take over and guide you the rest of the way. After this initial 
 
 ### 🤝 Contributing
 
-Pull requests are welcome! If you find a bug, have a security improvement, or want to enhance the CLI user experience, feel free to open an issue or submit a PR. This is a learning-focused toolkit, so clear, readable code is always prioritized (for the most part).
+Pull requests are welcome! If you find a bug, have a security improvement, or want to enhance the CLI user experience, feel free to open an issue or submit a PR. This is a learning-focused toolkit, so clear, readable code is always prioritized (for the most part, i.e. functions).
 
 See Future Roadmap to see whats on my mind regarding improving and updating the toolkit.
 
@@ -247,3 +247,8 @@ This toolkit is a demonstration of the holistic, product-focused approach I appl
 ### 🗺️ Future Roadmap
 
 I definitly got ideas on what to improve and new features to implement. But for now...it just works...so I am happy!
+
+I will, however, make the following improvements:
+* Make the backend minimally GDPR compliant. I have ideas on how to implement this (but suggestion are welcomed!)
+* Add option to upload backups, GoAcces report or any file via 0x0 for easy access instead of doing it manually via SCP.
+* Some quality of life improvements 
